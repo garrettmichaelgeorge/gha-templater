@@ -9,7 +9,7 @@ on:
         description: "Port's payload, including details for who triggered the action and general context (blueprint, run id, etc...)"
         type: string
     secrets: 
-      GITHUB_ORG_TOKEN: 
+      GH_ORG_TOKEN: 
         required: true
       PORT_CLIENT_ID:
         required: true
@@ -23,7 +23,7 @@ jobs:
         with:
           portClientId: ${{ secrets.PORT_CLIENT_ID }}
           portClientSecret: ${{ secrets.PORT_CLIENT_SECRET }}
-          token: ${{ secrets.GITHUB_ORG_TOKEN }}
+          token: ${{ secrets.GH_ORG_TOKEN }}
           portRunId: ${{ fromJson(inputs.port_payload).context.runId }}
           repositoryName: ${{ fromJson(inputs.port_payload).payload.properties.name }}
           portUserInputs: ${{ toJson(fromJson(inputs.port_payload).payload.properties) }} 
