@@ -29,3 +29,4 @@ jobs:
           portUserInputs: ${{ toJson(fromJson(inputs.port_payload).payload.properties) }} 
           cookiecutterTemplate: https://github.com/lacion/cookiecutter-golang
           blueprintIdentifier: 'repository'
+          organizationName: garrettmichaelgeorge
